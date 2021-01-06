@@ -1,0 +1,43 @@
+.form-control[type="number"]:focus,
+.form-control[type="email"]:focus,
+.form-control[type="url"]:focus,
+.form-control[type="search"]:focus,
+.form-control[type="tel"]:focus,
+.form-control[type="color"]:focus,
+.form-control[type="text"]:focus,
+button:focus,
+.uneditable-.form-control:focus {
+  border-color: rgb(255, 196, 81);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(0, 0, 0, 0);
+  outline: 0 none;
+}
+
+.form-control {
+  max-width: 30rem;
+  height: 3.7rem;
+  background-color: #ececec;
+  border: 0 #ffc451;
+}
+
+.form-control:hover {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom: 0.15rem solid #ffc451;
+}
+
+.form-control:focus {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom: 0.15rem solid #ffc451;
+}
+
+.btn {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 3.7rem;
+  border: 0.15rem solid #ececec;
+}
+
+.btn:hover {
+  border: 0.15rem solid #ffc451;
+}

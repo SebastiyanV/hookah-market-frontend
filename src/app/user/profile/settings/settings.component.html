@@ -1,0 +1,59 @@
+<div class="pl-3 pr-3 pb-5">
+  <div id="accordion">
+
+    <div class="card">
+      <div class="card-header" id="edit-profile-heading">
+        <h5 class="mb-0">
+          <button class="btn" data-toggle="collapse" data-target="#edit-profile-collapse" aria-expanded="true"
+                  aria-controls="edit-profile-collapse">
+            Редакция на профил
+          </button>
+        </h5>
+      </div>
+
+      <div id="edit-profile-collapse" class="collapse" aria-labelledby="edit-profile-heading"
+           data-parent="#accordion">
+        <div class="card-body">
+          <app-edit-profile></app-edit-profile>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="change-password-heading">
+        <h5 class="mb-0">
+          <button class="btn" data-toggle="collapse" data-target="#change-password-collapse" aria-expanded="true"
+                  aria-controls="change-password-collapse">
+            Промяна на парола
+          </button>
+        </h5>
+      </div>
+
+      <div id="change-password-collapse" class="collapse" aria-labelledby="change-password-heading"
+           data-parent="#accordion">
+        <div class="card-body">
+          <app-change-password></app-change-password>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="notifications-heading">
+        <h5 class="mb-0">
+          <button class="btn" data-toggle="collapse" data-target="#notifications-collapse" aria-expanded="true"
+                  aria-controls="notifications-collapse">
+            Известия
+          </button>
+        </h5>
+      </div>
+
+      <div id="notifications-collapse" class="collapse" aria-labelledby="notifications-heading"
+           data-parent="#accordion">
+        <div class="card-body">
+          <app-notifications></app-notifications>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
