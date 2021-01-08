@@ -1,0 +1,45 @@
+.media img {
+  padding: 0.5rem;
+  width: 10rem;
+  cursor: pointer;
+}
+
+.media-body {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.media:hover {
+  background-color: #f6f6f6;
+}
+
+.media-info {
+  margin-bottom: 0.5rem;
+}
+
+.media-info-category {
+  font-size: 0.7rem;
+  margin-left: 1rem;
+}
+
+.media-info-price {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.media-published-on {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 0.05rem;
+}
+
+.modal-body i {
+  margin-right: 0.5rem;
+}
+
+.media-status {
+  font-size: 0.8rem;
+  color: green;
+}

@@ -12,3 +12,4 @@ export const CHANGE_PASSWORD_URL = API_URL + '/user/settings/change-password';
 // Article Service
 export const CREATE_ARTICLE_URL = API_URL + '/article/create';
 export const GET_ALL_ARTICLES = API_URL + '/article/get';
+export const GET_MY_ARTICLES = API_URL + '/article/get/my';

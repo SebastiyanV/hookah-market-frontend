@@ -1,4 +1,100 @@
-<div class="text-center">
+<div
+  *ngIf="undefined !== articles && null !== articles && articles.length > 0">
+
+  <div class="media row"
+       *ngFor="let article of articles">
+    <img
+      src="https://frankfurt.apollo.olxcdn.com/v1/files/sk4pzbda449n2-BG/image;s=585x461"
+      class="img-fluid"
+      alt="..."
+      data-toggle="modal"
+      [attr.data-target]="'#modal' + article.id"
+    >
+
+    <div class="media-body"
+         data-toggle="modal"
+         [attr.data-target]="'#modal' + article.id">
+      <h5 class="mt-0">
+        {{ article.title }}
+        <span class="media-status"
+              [ngbTooltip]="'активна'">
+          <i class="fas fa-circle"></i>
+        </span>
+        <span class="media-published-on">
+          Публикувана на {{ article.publishedOn | date }}
+        </span>
+      </h5>
+
+      <div class="media-info">
+        <span class="media-info-price">
+          {{ article.price | currency: ' '}} лв.
+        </span>
+        <span class="media-info-category">
+          {{ article.category.name }} / {{ article.brand.name }}
+        </span>
+      </div>
+      <div *ngIf="article.description.length > 150">
+        {{ article.description | slice:0: 150 }}...
+      </div>
+      <div *ngIf="article.description.length < 150">
+        {{ article.description }}
+      </div>
+    </div>
+
+    <div class="modal fade"
+         [attr.id]="'modal' + article.id"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{ article.title }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="far fa-eye"></i> Преглед
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="far fa-edit"></i> Промяна
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="far fa-eye-slash"></i> Скрий
+              </a>
+              <a href="#" class="list-group-item list-group-item-action text-danger">
+                <i class="far fa-trash-alt"></i> Изтрий
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+
+
+<!--<div class="media row">-->
+<!--  <img src="https://frankfurt.apollo.olxcdn.com/v1/files/sk4pzbda449n2-BG/image;s=585x461"-->
+<!--       class="img-fluid d-flex justify-content-center" alt="...">-->
+<!--  <div class="media-body">-->
+<!--    <h5 class="mt-0">Media heading</h5>-->
+<!--    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,-->
+<!--    vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia-->
+<!--    congue felis in faucibus.-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="text-center"
+     *ngIf="undefined !== articles && null !== articles && articles.length <= 0">
+
   <h4>Нямаш активни обяви</h4>
-  <button class="btn btn-outline-warning mt-3">Добави обява</button>
+  <button class="btn btn-outline-warning mt-3" [routerLink]="'../../article/create'">Добави обява</button>
 </div>

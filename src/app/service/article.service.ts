@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {CREATE_ARTICLE_URL, GET_ALL_ARTICLES} from '../shared/constant/url.constant';
+import {CREATE_ARTICLE_URL, GET_ALL_ARTICLES, GET_MY_ARTICLES} from '../shared/constant/url.constant';
 import {httpOptions} from '../shared/constant/application.properties';
 import {TokenService} from './token.service';
 import {Observable} from 'rxjs';
@@ -27,5 +27,9 @@ export class ArticleService {
 
   public getAllArticles(): Observable<any> {
     return this.http.get(GET_ALL_ARTICLES, httpOptions(this.tokenService.getToken()));
+  }
+
+  public getMyArticles(): Observable<any> {
+    return this.http.get(GET_MY_ARTICLES, httpOptions(this.tokenService.getToken()))
   }
 }
