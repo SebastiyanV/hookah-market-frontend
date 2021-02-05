@@ -1,0 +1,57 @@
+<div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="sidebar-heading d-flex justify-content-center">
+    <img src="assets/logo.png" alt="hookah market logo" class="img-fluid" width="150px">
+  </div>
+  <div class="list-group list-group-flush">
+    <a routerLink="dashboard"
+       class="list-group-item list-group-item-action bg-light">
+      <i class="fas fa-chart-line"></i>
+      Табло
+    </a>
+    <a [routerLink]="'articles'"
+       class="list-group-item list-group-item-action bg-light">
+      <i class="far fa-newspaper"></i>
+      Обяви
+    </a>
+    <a href="#"
+       class="list-group-item list-group-item-action list-group-sub-item bg-light">
+      <i class="fas fa-circle light-green fs-06r"></i>
+      Одобрени
+    </a>
+    <a href="#"
+       class="list-group-item list-group-item-action list-group-sub-item bg-light">
+      <i class="fas fa-circle light-yellow fs-06r"></i>
+      Чакащи одобрение <span class="badge badge-light">{{ awaitingApprovalArticlesCount }}</span>
+    </a>
+    <a href="#"
+       class="list-group-item list-group-item-action list-group-sub-item bg-light">
+      <i class="fas fa-circle light-red fs-06r"></i>
+      Неактивни
+    </a>
+    <a routerLink="users"
+       class="list-group-item list-group-item-action bg-light">
+      <i class="fas fa-users"></i>
+      Потребители
+    </a>
+    <a routerLink="reports"
+       class="list-group-item list-group-item-action bg-light">
+      <i class="fas fa-flag"></i>
+      Доклади
+    </a>
+    <a href="#"
+       class="list-group-item list-group-item-action list-group-sub-item bg-light">
+      <i class="fas fa-check-circle fs-1rem light-green"></i>
+      Затворени
+    </a>
+    <a href="#"
+       class="list-group-item list-group-item-action list-group-sub-item bg-light">
+      <i class="fas fa-dot-circle light-yellow fs-1rem"></i>
+      Активни <span class="badge badge-light p-1">13</span>
+    </a>
+    <a [routerLink]="'articles'"
+       class="list-group-item list-group-item-action bg-light">
+      <i class="fas fa-align-left"></i>
+      Логове
+    </a>
+  </div>
+</div>

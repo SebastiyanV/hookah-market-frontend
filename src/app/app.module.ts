@@ -17,6 +17,7 @@ import {ToastrModule, ToastrService} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ArticleModule} from './article/article.module';
 import {HomeModule} from './home/home.module';
+import {AdminModule} from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {HomeModule} from './home/home.module';
     UserModule,
     SharedModule,
     ArticleModule,
-    HomeModule
+    HomeModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

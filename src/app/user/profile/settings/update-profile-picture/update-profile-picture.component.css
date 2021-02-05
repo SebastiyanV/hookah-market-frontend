@@ -1,0 +1,42 @@
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  background-color: #efefef;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  letter-spacing: 0.08rem;
+  transition: 0.5s;
+  transition-property: background-color;
+}
+
+.custom-file-upload:hover {
+  background-color: #a4a4a4;
+}
+
+.btn-upload-file {
+  padding: 1rem;
+  border: 0.1rem solid #efefef;
+}
+
+.btn-upload-file:hover, .btn-upload-file:active {
+  border: 0.1rem solid #ffc451;
+}
+
+.btn-delete-file {
+  font-weight: bold;
+  margin-top: 1rem;
+  color: darkred;
+  font-size: 0.8rem;
+  border-bottom: 0.1rem solid white;
+  transition: 0.5s;
+  transition-property: border-bottom-color;
+}
+
+.btn-delete-file:hover, .btn-delete-file:active {
+  border-bottom: 0.1rem solid darkred;
+}
+
+img {
+  width: 200px;
+}

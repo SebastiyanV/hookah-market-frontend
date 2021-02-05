@@ -7,5 +7,6 @@ export interface IUser {
   email: string;
   phoneNumber: string;
   password: string;
+  profilePicture: string;
   authorities: Array<IAuthority>;
 }

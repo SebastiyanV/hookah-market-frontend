@@ -1,6 +1,7 @@
 import {IUser} from './IUser';
 import {IBrand} from './IBrand';
 import {ICategory} from './ICategory';
+import { IArticleImage } from './IArticleImage';
 
 export interface IArticle {
   id: string;
@@ -15,4 +16,5 @@ export interface IArticle {
   author: IUser;
   brand: IBrand;
   category: ICategory;
+  images: Array<IArticleImage>
 }

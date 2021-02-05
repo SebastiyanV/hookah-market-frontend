@@ -1,0 +1,33 @@
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+
+.form-control {
+  height: 3rem;
+  border-left: none;
+}
+
+.fas {
+  color: #ffc451;
+}
+
+.input-group-text {
+  background-color: white;
+  border-right: none;
+}
+
+.bg-disabled {
+  background-color: #e9ecef;
+}

@@ -34,3 +34,24 @@ export function httpOptions(token?: string): any {
     };
   }
 }
+
+export function httpOptionMultipartData(): any {
+  // headers.delete('Content-Type');
+  return new HttpHeaders({
+    'Content-Type': 'application/json',
+    // 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW', //boundary=----WebKitFormBoundary0ae4CymwYLjdqdI1
+    Authorization: TOKEN_TYPE + window.sessionStorage.getItem(TOKEN_KEY)
+  });
+}
+
+export function httpOptionsWithAuthorizationAndWithoutContentType(token?: string): any {
+  if (token !== null) {
+
+    return {
+      headers: new HttpHeaders()
+        .set('Authorization', `${TOKEN_TYPE + window.sessionStorage.getItem(TOKEN_KEY)}`)
+    };
+  } else {
+    return null;
+  }
+}

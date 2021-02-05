@@ -1,8 +1,19 @@
 <div
   *ngIf="undefined !== articles && null !== articles && articles.length > 0">
 
+  <div class="pagination-top">
+    <ngb-pagination
+      [pageSize]="pageSize"
+      [collectionSize]="articles.length"
+      [(page)]="page"
+      aria-label="Default pagination">
+      <ng-template ngbPaginationPrevious>Предишна</ng-template>
+      <ng-template ngbPaginationNext>Следваща</ng-template>
+    </ngb-pagination>
+  </div>
+
   <div class="media row"
-       *ngFor="let article of articles">
+       *ngFor="let article of articles | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
     <img
       src="https://frankfurt.apollo.olxcdn.com/v1/files/sk4pzbda449n2-BG/image;s=585x461"
       class="img-fluid"
@@ -75,6 +86,16 @@
       </div>
     </div>
 
+  </div>
+  <div class="pagination">
+    <ngb-pagination
+      [pageSize]="pageSize"
+      [collectionSize]="articles.length"
+      [(page)]="page"
+      aria-label="Default pagination">
+      <ng-template ngbPaginationPrevious>Предишна</ng-template>
+      <ng-template ngbPaginationNext>Следваща</ng-template>
+    </ngb-pagination>
   </div>
 </div>
 

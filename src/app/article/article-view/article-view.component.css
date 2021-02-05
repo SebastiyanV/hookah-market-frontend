@@ -1,0 +1,98 @@
+.gallery {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.gallery img {
+  height: 35rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.user {
+  padding: 1rem;
+  background-color: #e9fcfb;
+}
+
+.breadcrumb {
+  background-color: #f6f6f6;
+}
+
+.breadcrumb-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.user img {
+  width: 100px;
+  height: 100px;
+}
+
+.authorFirstName {
+  font-size: 20px;
+}
+
+.lastOnline {
+  display: block;
+  color: #7f9799;
+}
+
+.viewAllArticles a {
+  font-size: 0.8rem;
+  color: black;
+  text-decoration: underline;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+}
+
+.btn-call, .btn-msg {
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-call {
+  font-weight: bold;
+  border: 0.1rem solid #002f34;
+}
+
+.btn-msg {
+  font-weight: bold;
+  background-color: #002f34;
+  color: white;
+}
+
+.location {
+  padding: 1rem;
+}
+
+.description {
+  padding: 1rem;
+}
+
+.article-published-on {
+  font-size: 0.85rem;
+  color: #868686;
+}
+
+.article-title {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+}
+
+.article-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.article-description {
+  margin-top: 1.2rem;
+}
+
+.report {
+  color: black;
+  font-weight: bold;
+}

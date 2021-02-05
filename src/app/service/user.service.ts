@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {CHANGE_PASSWORD_URL, USER_EDIT_PROFILE_URL} from '../shared/constant/url.constant';
+import {CHANGE_PASSWORD_URL, DELETE_PROFILE_PICTURE, UPDATE_PROFILE_PICTURE, USER_EDIT_PROFILE_URL} from '../shared/constant/url.constant';
 import {IUser} from '../shared/interface/IUser';
 import {TokenService} from './token.service';
-import {httpOptions} from '../shared/constant/application.properties';
+import {httpOptions, httpOptionsWithAuthorizationAndWithoutContentType} from '../shared/constant/application.properties';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +31,13 @@ export class UserService {
 
   public changePassword(data: any): any {
     return this.http.post(CHANGE_PASSWORD_URL, data, httpOptions(this.tokenService.getToken()));
+  }
+
+  public updateProfilePicture(profilePicture: any) {
+    return this.http.post(UPDATE_PROFILE_PICTURE, profilePicture, httpOptionsWithAuthorizationAndWithoutContentType(this.tokenService.getToken()));
+  }
+
+  public deleteProfilePicture() {
+    return this.http.delete(DELETE_PROFILE_PICTURE, httpOptions(this.tokenService.getToken()));
   }
 }

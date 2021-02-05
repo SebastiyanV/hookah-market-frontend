@@ -1,0 +1,126 @@
+<div class="card mb-3">
+  <div class="row p-3">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+          <span class="input-group-text">
+           <i class="fas fa-heading"></i>
+          </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Заглавие"
+              [(ngModel)]="searchFieldTitle">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fas fa-align-right"></i>
+          </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Описание"
+              [(ngModel)]="searchFieldDescription">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+          <span class="input-group-text">
+           <i class="fas fa-user"></i>
+          </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Автор"
+              [(ngModel)]="searchFieldAuthor">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+          <span class="input-group-text bg-disabled">
+            <i class="fas fa-dollar-sign"></i>
+          </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Цена"
+              mvndrMatCurrencyFormat
+              [allowNegative]="false"
+              [currencyCode]="'BGN '"
+              [(ngModel)]="searchFieldPrice" disabled>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+          <span class="input-group-text bg-disabled">
+            <i class="fas fa-align-right"></i>
+          </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Дата на публикуване"
+              [(ngModel)]="searchFieldPublishedDate" disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-3"
+     *ngFor="let article of articles |
+     searchByTitle: searchFieldTitle
+     : searchFieldDescription
+     : searchFieldAuthor
+     : searchFieldPrice
+">
+  <div class="row no-gutters">
+    <div class="col-md-1">
+      <img
+        src="https://hookah-market.s3.eu-west-2.amazonaws.com/{{ article.images | getCoverImage }}"
+        class="card-img"
+        alt="...">
+    </div>
+    <div class="col-md-11">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ article?.title }}
+          <span class="text-muted ml-5">
+            {{ article?.price | currency: 'BGN '}}
+          </span>
+          <span *ngIf="article?.negotiable"
+                class="text-muted small">
+            (по договаряне)
+          </span>
+        </h5>
+        <ng-container *ngIf="article.description.length > 400">
+          <p class="card-text">{{ article.description | slice:0:401 }}...</p>
+        </ng-container>
+        <ng-container *ngIf="article.description.length <= 400">
+          <p class="card-text">{{ article.description }}</p>
+        </ng-container>
+        <p class="card-text">
+          Публикувана от <span
+          class="font-weight-bold">{{ article.author.firstName + " " + article.author.lastName }}</span>
+          на {{ article.publishedOn | date }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

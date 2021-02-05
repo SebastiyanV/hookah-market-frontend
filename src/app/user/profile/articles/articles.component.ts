@@ -9,6 +9,9 @@ import {IArticle} from '../../../shared/interface/IArticle';
 })
 export class ArticlesComponent implements OnInit {
   articles: Array<IArticle>;
+  page = 1;
+  pageSize = 5;
+  items = [];
 
   constructor(
     private articleService: ArticleService
@@ -19,6 +22,7 @@ export class ArticlesComponent implements OnInit {
     this.articleService.getMyArticles().subscribe(
       data => {
         this.articles = data;
+        this.items = data;
       },
       error => {
         console.log(error);

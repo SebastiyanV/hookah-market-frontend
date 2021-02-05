@@ -1,5 +1,10 @@
-<app-header></app-header>
-<div class="container-fluid">
+<ng-container *ngIf="checkClientOrAdminSide()">
   <router-outlet></router-outlet>
-</div>
-<app-footer></app-footer>
+</ng-container>
+<ng-container *ngIf="!checkClientOrAdminSide()">
+  <app-header></app-header>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</ng-container>

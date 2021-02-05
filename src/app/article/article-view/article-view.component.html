@@ -1,0 +1,127 @@
+<div class="container pt-3">
+
+  <div class="breadcrumb-block">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">{{article?.brand?.name}}</a></li>
+        <li class="breadcrumb-item"><a href="#">{{article?.category?.name}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{article?.title}}</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card gallery">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li *ngFor="let image of article?.images; let i = index"
+                data-target="#carouselExampleIndicators"
+                [attr.data-slide-to]="i"
+                [ngClass]="{'active': i === 0}"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item"
+                 *ngFor="let image of article?.images; let i = index"
+                 [ngClass]="{'active': i === 0}">
+              <img src="https://hookah-market.s3.eu-west-2.amazonaws.com/{{image?.imageName}}"
+                   alt="снимка на {{article?.title}}">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row w-100 mx-auto">
+        <div class="card user">
+          <h6>Потребител</h6>
+          <div class="row mt-2">
+            <div class="col-sm-4">
+              <img src="https://hookah-market.s3.eu-west-2.amazonaws.com/{{article?.author?.profilePicture}}"
+                   alt="снимка на {{article?.title}}" class="rounded-circle float-left img-fluid">
+            </div>
+            <div class="col-sm-8">
+            <span class="authorFirstName">
+              {{article?.author?.firstName}}
+            </span>
+              <span class="lastOnline">
+              Последно онлайн днес в 21:00 ч.
+            </span>
+              <span class="viewAllArticles">
+              <a href="#">Всички обяви на този потребител</a>
+            </span>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-sm-6 d-flex justify-content-center">
+              <a href="#" class="btn btn-call">
+                Обади се
+              </a>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center">
+              <a href="#" class="btn btn-msg">
+                Съобщение
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row w-100 mx-auto mt-3">
+        <div class="card location">
+          <h6>Локация</h6>
+          <div class="row mt-3">
+            <div class="col-sm-7">
+            <span class="font-weight-bold d-block">
+              гр. София, Център
+            </span>
+              <span class="font-weight-light mt-1 d-block">
+              Област София-град
+            </span>
+              <span class="text-muted mt-2 d-block">
+                На 5 км. от теб
+              </span>
+            </div>
+            <div class="col-sm-5">
+              <img src="https://www.olx.bg/app/static/media/staticmap.65e20ad98.svg" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-8">
+      <div class="card description">
+        <span class="article-published-on">
+          Добавена на {{ article?.publishedOn | date }}
+        </span>
+        <span class="article-title">
+          {{ article?.title }}
+        </span>
+        <span class="article-price">
+          {{ article?.price }} лв.
+          <ng-container *ngIf="article?.negotiable">
+            | По договаряне
+          </ng-container>
+        </span>
+        <span class="article-description">
+          <h5>Описание</h5>
+          {{ article?.description }}
+        </span>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <span class="text-muted">Преглеждания: 142</span>
+          <span><a href="#" class="report">Докладвай</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

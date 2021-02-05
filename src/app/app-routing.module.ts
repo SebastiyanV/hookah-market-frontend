@@ -15,30 +15,78 @@ import {UserGuard} from './shared/guard/user.guard';
 import {SearchesComponent} from './user/profile/favorites/searches/searches.component';
 import {UsersComponent} from './user/profile/favorites/users/users.component';
 import {ArticleCreateComponent} from './article/article-create/article-create.component';
+import {ArticleViewComponent} from './article/article-view/article-view.component';
+import {AdminComponent} from './admin/admin/admin.component';
+import {AdminGuard} from './shared/guard/admin.guard';
+import {DashboardComponent as AP_Dashboard} from './admin/admin/dashboard/dashboard.component';
+import {ArticlesComponent as AP_Articles} from './admin/admin/articles/articles.component';
+import {UsersComponent as AP_Users} from './admin/admin/users/users.component';
+import {ReportsComponent as AP_Reports} from './admin/admin/reports/reports.component';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
-  {path: 'auth/login', component: LoginComponent, canActivate: [GuestGuard]},
-  {path: 'auth/register', component: RegisterComponent, canActivate: [GuestGuard]},
+  {
+    path: '', component: HomePageComponent
+  },
+  {
+    path: 'auth/login', component: LoginComponent, canActivate: [GuestGuard]
+  },
+  {
+    path: 'auth/register', component: RegisterComponent, canActivate: [GuestGuard]
+  },
   {
     path: 'profile', component: ProfileComponent, children: [
-      {path: 'articles', component: ArticlesComponent},
-      {path: 'messages', component: MessagesComponent},
-      {path: 'payments', component: PaymentsComponent},
+      {
+        path: 'articles', component: ArticlesComponent
+      },
+      {
+        path: 'messages', component: MessagesComponent
+      },
+      {
+        path: 'payments', component: PaymentsComponent
+      },
       {
         path: 'favorites', component: FavoritesComponent, children: [
-          {path: 'articles', component: ArticlesComponent},
-          {path: 'users', component: UsersComponent},
-          {path: 'searches', component: SearchesComponent},
+          {
+            path: 'articles', component: ArticlesComponent
+          },
+          {
+            path: 'users', component: UsersComponent
+          },
+          {
+            path: 'searches', component: SearchesComponent
+          },
         ]
       },
-      {path: 'settings', component: SettingsComponent}
+      {
+        path: 'settings', component: SettingsComponent
+      }
     ], canActivate: [UserGuard], canActivateChild: [UserGuard]
   },
   {
     path: 'article/create', component: ArticleCreateComponent, canActivate: [UserGuard], canActivateChild: [UserGuard]
   },
-  {path: '**', component: PageNotFountComponent},
+  {
+    path: 'article/:articleId', component: ArticleViewComponent, canActivate: [UserGuard]
+  },
+  {
+    path: 'hm-admin', component: AdminComponent, canActivate: [AdminGuard], canActivateChild: [AdminGuard], children: [
+      {
+        path: 'dashboard', component: AP_Dashboard
+      },
+      {
+        path: 'articles', component: AP_Articles
+      },
+      {
+        path: 'users', component: AP_Users
+      },
+      {
+        path: 'reports', component: AP_Reports
+      }
+    ]
+  },
+  {
+    path: '**', component: PageNotFountComponent
+  },
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@ import {RegisterComponent} from './auth/register/register.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
-import {NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 import {SettingsComponent} from './profile/settings/settings.component';
 import {ChangePasswordComponent} from './profile/settings/change-password/change-password.component';
 import {EditProfileComponent} from './profile/settings/edit-profile/edit-profile.component';
@@ -18,6 +18,7 @@ import {LastConsideredComponent} from './profile/favorites/last-considered/last-
 import {SearchesComponent} from './profile/favorites/searches/searches.component';
 import {PaymentsComponent} from './profile/payments/payments.component';
 import {ProfileComponent} from './profile/profile.component';
+import { UpdateProfilePictureComponent } from './profile/settings/update-profile-picture/update-profile-picture.component';
 
 
 @NgModule({
@@ -35,18 +36,20 @@ import {ProfileComponent} from './profile/profile.component';
         LastConsideredComponent,
         SearchesComponent,
         PaymentsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UpdateProfilePictureComponent
     ],
     exports: [
         ProfileComponent
     ],
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        RouterModule,
-        NgbTooltipModule,
-    ]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+    NgbTooltipModule,
+    NgbPaginationModule,
+  ]
 })
 export class UserModule {
 }

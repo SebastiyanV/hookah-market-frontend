@@ -43,3 +43,37 @@
   font-size: 0.8rem;
   color: green;
 }
+
+.pagination {
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.pagination-top {
+  margin-top: -2rem;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+ngb-pagination ::ng-deep a {
+  color: #6c757d;
+}
+
+ngb-pagination ::ng-deep a:hover {
+  color: white;
+  background-color: #ffc451;
+}
+
+ngb-pagination ::ng-deep .page-item.active .page-link {
+  background-color: #ffc451;
+  border-color: #dee2e6;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(0, 0, 0, 0);
+  outline: 0 none;
+}
+::ng-deep .pagination li a:focus, ::ng-deep .pagination li a:active {
+  border-color: #dee2e6;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(0, 0, 0, 0);
+  outline: 0 none;
+}
+

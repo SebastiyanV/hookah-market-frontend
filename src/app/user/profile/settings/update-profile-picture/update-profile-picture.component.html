@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label
+        for="profile-picture-upload"
+        class="custom-file-upload">
+        <i class="fa fa-cloud-upload">
+          Качи нова снимка
+        </i>
+      </label>
+      <input
+        [type]="'file'"
+        id="profile-picture-upload"
+        (change)="uploadFile($event)">
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button
+        class="btn btn-upload-file"
+        (click)="onSubmit()">
+        Запази промените
+      </button>
+    </div>
+  </div>
+  <div class="col-sm-6 text-center">
+    <div *ngIf="currentProfileImage === null">
+      <div class="profile-picture w-100 pt-2">
+        <img
+          src="assets/default_profile_picture.png"
+          alt="profile picture"
+          #fileUpload>
+      </div>
+    </div>
+    <div *ngIf="currentProfileImage !== null">
+      <div class="profile-picture w-100 pt-2">
+        <img
+          src="https://hookah-market.s3.eu-west-2.amazonaws.com/{{ currentProfileImage }}"
+          alt="Профилна снимка"
+          #fileUpload>
+      </div>
+      <button
+        class="btn btn-delete-file"
+        (click)="deleteCurrentProfilePicture()">
+        Изтрий профилната снимка
+      </button>
+    </div>
+    <!--    <div *ngIf="newImageInput !== null">-->
+    <!--      <div *ngIf="currProfilePicture !== null">-->
+    <!--        <img src="https://hookah-market.s3.eu-west-2.amazonaws.com/{{ currProfilePicture }}" alt="profile picture">-->
+    <!--        <button-->
+    <!--          class="btn btn-delete-file"-->
+    <!--          (click)="deleteCurrentProfilePicture()">-->
+    <!--          Изтрий профилната снимка-->
+    <!--        </button>-->
+    <!--      </div>-->
+    <!--      <div *ngIf="currProfilePicture === null">-->
+    <!--        <img src="assets/default_profile_picture.png" alt="profile picture">-->
+    <!--      </div>-->
+    <!--    </div>-->
+  </div>
+</div>
