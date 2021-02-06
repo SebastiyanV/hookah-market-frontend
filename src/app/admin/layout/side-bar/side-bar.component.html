@@ -16,12 +16,12 @@
     <a href="#"
        class="list-group-item list-group-item-action list-group-sub-item bg-light">
       <i class="fas fa-circle light-green fs-06r"></i>
-      Одобрени
+      Активни
     </a>
-    <a href="#"
+    <a [routerLink]="'articles/awaiting'"
        class="list-group-item list-group-item-action list-group-sub-item bg-light">
       <i class="fas fa-circle light-yellow fs-06r"></i>
-      Чакащи одобрение <span class="badge badge-light">{{ awaitingApprovalArticlesCount }}</span>
+      Чакащи одобрение <span class="badge badge-light p-1 text-danger">{{ awaitingApprovalArticlesCount }}</span>
     </a>
     <a href="#"
        class="list-group-item list-group-item-action list-group-sub-item bg-light">
@@ -46,7 +46,7 @@
     <a href="#"
        class="list-group-item list-group-item-action list-group-sub-item bg-light">
       <i class="fas fa-dot-circle light-yellow fs-1rem"></i>
-      Активни <span class="badge badge-light p-1">13</span>
+      Активни <span class="badge badge-light p-1 text-danger">13</span>
     </a>
     <a [routerLink]="'articles'"
        class="list-group-item list-group-item-action bg-light">

@@ -14,6 +14,7 @@ export const DELETE_PROFILE_PICTURE = API_URL + '/user/settings/delete-profile-p
 // Article Service
 export const CREATE_ARTICLE_URL = API_URL + '/article/create';
 export const GET_ALL_ARTICLES = API_URL + '/article/get';
-export const GET_MY_ARTICLES = API_URL + '/article/get/my';
-export const GET_ARTICLE_BY_ID = API_URL + '/article/get/';
-export const GET_COUNT_OF_AWAITING_APPROVAL_ARTICLES = API_URL + '/article/get/all/AWAITING_APPROVAL';
+export const GET_MY_ARTICLES = API_URL + '/article/my-articles';
+export const GET_ARTICLE_BY_ID = API_URL + '/article/';
+export const GET_AWAITING_APPROVAL_ARTICLES = API_URL + '/article/status/AWAITING_APPROVAL';
+export const GET_COUNT_OF_AWAITING_APPROVAL_ARTICLES = API_URL + '/article/status/AWAITING_APPROVAL/count';

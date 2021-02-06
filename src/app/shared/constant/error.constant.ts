@@ -17,6 +17,6 @@ export const TEMP_DESCRIPTION = 'Cras justo arcu, semper a leo a, condimentum ia
 export const NO_CATEGORY_SELECTED = 'Трябва да изберете категория';
 export const NO_BRAND_SELECTED = 'Трябва да изберете марка';
 
-// admin/admin/layout/side-bar
+// admin
 export const LOADING_PRODUCTS_ERROR_TITLE = "Зареждане на продукти"
 export const LOADING_PRODUCTS_ERROR_MESSAGE = "Проблем при зареждането на продукти. Моля презаредете страницата и опитайте отново!"

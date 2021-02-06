@@ -22,6 +22,7 @@ import {DashboardComponent as AP_Dashboard} from './admin/admin/dashboard/dashbo
 import {ArticlesComponent as AP_Articles} from './admin/admin/articles/articles.component';
 import {UsersComponent as AP_Users} from './admin/admin/users/users.component';
 import {ReportsComponent as AP_Reports} from './admin/admin/reports/reports.component';
+import {AwaitingArticlesComponent} from './admin/admin/awaiting-articles/awaiting-articles.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,9 @@ const routes: Routes = [
       },
       {
         path: 'articles', component: AP_Articles
+      },
+      {
+        path: 'articles/awaiting', component: AwaitingArticlesComponent
       },
       {
         path: 'users', component: AP_Users

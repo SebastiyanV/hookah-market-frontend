@@ -8,6 +8,13 @@ export const ROLE_ADMIN = 'ROLE_ADMIN';
 export const ROLE_MODERATOR = 'ROLE_MODERATOR';
 export const ROLE_USER = 'ROLE_USER';
 
+// Article Type and Status
+export const ACTIVE_STATUS = 'ACTIVE';
+export const INACTIVE_STATUS = 'INACTIVE';
+export const AWAITING_APPROVAL_STATUS = 'AWAITING_APPROVAL';
+export const NORMAL_TYPE = 'NORMAL';
+export const PROMO_TYPE = 'PROMO';
+
 // SessionStorage props
 export const TOKEN_KEY = 'auth';
 export const TOKEN_TYPE = 'Bearer ';

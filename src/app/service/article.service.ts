@@ -1,6 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {CREATE_ARTICLE_URL, GET_ALL_ARTICLES, GET_ARTICLE_BY_ID, GET_COUNT_OF_AWAITING_APPROVAL_ARTICLES, GET_MY_ARTICLES} from '../shared/constant/url.constant';
+import {
+  CREATE_ARTICLE_URL,
+  GET_ALL_ARTICLES,
+  GET_ARTICLE_BY_ID,
+  GET_AWAITING_APPROVAL_ARTICLES,
+  GET_COUNT_OF_AWAITING_APPROVAL_ARTICLES,
+  GET_MY_ARTICLES
+} from '../shared/constant/url.constant';
 import {httpOptions, httpOptionsWithAuthorizationAndWithoutContentType} from '../shared/constant/application.properties';
 import {TokenService} from './token.service';
 import {Observable} from 'rxjs';
@@ -61,6 +68,10 @@ export class ArticleService {
   }
 
   public getCountOfAwaitingApprovalArticles(): Observable<any> {
-    return this.http.get(GET_COUNT_OF_AWAITING_APPROVAL_ARTICLES, httpOptions(this.tokenService.getToken()))
+    return this.http.get(GET_COUNT_OF_AWAITING_APPROVAL_ARTICLES, httpOptions(this.tokenService.getToken()));
+  }
+
+  public getArticlesByStatus(AWAITING_APPROVAL_STATUS: string): Observable<any> {
+    return this.http.get(GET_AWAITING_APPROVAL_ARTICLES, httpOptions(this.tokenService.getToken()));
   }
 }
